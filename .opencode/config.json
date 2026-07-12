@@ -1,0 +1,29 @@
+{
+  "provider": "anthropic",
+  "model": "claude-3-5-sonnet-20241022",
+  "rules": [
+    "Selalu baca claude.md dan ARCHITECTURE.md sebelum mulai coding",
+    "Gunakan TypeScript strict mode",
+    "Gunakan Bahasa Indonesia untuk semua UI text",
+    "Mobile-first responsive design",
+    "Selalu validasi input dengan Zod",
+    "Gunakan shadcn/ui components, jangan bikin dari nol kecuali perlu",
+    "Tambah loading states untuk interaksi user",
+    "Tambah error handling dengan try/catch",
+    "Simpan data ke LocalStorage, jangan ke server (phase 1)",
+    "Gunakan UserContext untuk global state",
+    "Jangan expose data sensitif (NIK asli, dll)",
+    "Setiap page harus ada metadata (title, description)",
+    "Gunakan Lucide icons, jangan pakai emoji",
+    "Warna utama: emerald-600 (hijau trust)",
+    "Font: system-ui atau Inter"
+  ],
+  "ignore": [
+    "node_modules",
+    ".next",
+    "dist",
+    "*.log",
+    ".env",
+    ".env.local"
+  ]
+}
