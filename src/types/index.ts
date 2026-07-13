@@ -88,3 +88,81 @@ export interface FiturItem {
   href: string;
   color: string;
 }
+
+// ============================================
+// TYPES: Fase 2 - Micro-Capital & Crowdfunding
+// ============================================
+
+export interface UserAuth {
+  id: string;
+  email: string;
+  name: string;
+  role: "umkm" | "investor" | "admin";
+  avatarUrl?: string;
+}
+
+export interface Campaign {
+  id: string;
+  title: string;
+  description: string;
+  targetAmount: number;
+  currentAmount: number;
+  category: "kuliner" | "jasa" | "kerajinan" | "pertanian" | "produksi" | "lainnya";
+  creatorId: string;
+  creatorName: string;
+  status: "active" | "funded" | "ended";
+  endDate: string;
+  createdAt: string;
+  investorCount: number;
+}
+
+export interface Investment {
+  id: string;
+  campaignId: string;
+  campaignTitle: string;
+  investorId: string;
+  investorName: string;
+  amount: number;
+  tanggal: string;
+}
+
+export interface Loan {
+  id: string;
+  amount: number;
+  interestRate: number; // e.g. 0.05 (5%)
+  durationMonths: number;
+  monthlyPayment: number;
+  totalRepayment: number;
+  purpose: string;
+  status: "pending" | "approved" | "active" | "paid" | "rejected";
+  createdAt: string;
+  repaymentSchedule: RepaymentInstallment[];
+}
+
+export interface RepaymentInstallment {
+  dueDate: string;
+  amount: number;
+  status: "unpaid" | "paid";
+  paidAt?: string;
+}
+
+export interface ArisanGroup {
+  id: string;
+  name: string;
+  targetAmount: number;
+  contributionAmount: number;
+  members: string[]; // member names
+  winnerSchedule: { month: number; memberName: string; won: boolean }[];
+  status: "active" | "completed";
+  createdAt: string;
+}
+
+export interface FinancialEntry {
+  id: string;
+  type: "income" | "expense";
+  amount: number;
+  category: string;
+  description: string;
+  date: string;
+}
+

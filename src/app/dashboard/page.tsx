@@ -118,6 +118,70 @@ export default function DashboardPage() {
         </div>
 
         <div className="lg:col-span-2 space-y-6">
+          {/* Fase 2 Panel */}
+          <div
+            className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm"
+            role="region"
+            aria-label="Fitur permodalan dan keuangan"
+          >
+            <h3 className="text-md font-bold text-slate-800 border-b border-gray-100 pb-2 mb-4 flex items-center space-x-2">
+              <DollarSign className="h-5 w-5 text-emerald-600" aria-hidden="true" />
+              <span>Akses Keuangan & Komunitas (Fase 2)</span>
+            </h3>
+
+            {!(userData.statusLegal?.nib && userData.statusLegal?.npwp) ? (
+              <div className="p-4 bg-amber-50 rounded-lg border border-amber-200 text-amber-800 text-xs leading-relaxed space-y-2">
+                <p className="font-bold flex items-center gap-1">
+                  <span>🔒 Fitur Finansial Terkunci</span>
+                </p>
+                <p>
+                  Selesaikan berkas **NIB** dan **NPWP** Anda di checklist legalitas untuk membuka akses ke fitur Modal Komunitas, Pencatatan Keuangan Usaha, Pinjaman Mikro, dan Arisan Digital.
+                </p>
+                <Link
+                  href="/cek-legalitas"
+                  className="inline-flex items-center text-xs font-bold text-emerald-700 hover:text-emerald-800"
+                >
+                  Lengkapi Sekarang
+                  <ChevronRight className="h-3 w-3 ml-0.5" />
+                </Link>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                <div className="p-3 bg-emerald-50 rounded-lg border border-emerald-200 text-emerald-800 text-xs">
+                  <p className="font-bold">✓ Fitur Finansial Terbuka!</p>
+                  <p className="mt-1">Anda sekarang dapat mengelola keuangan, mengajukan pinjaman, dan berpartisipasi dalam arisan komunitas.</p>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4 text-center">
+                  <Link
+                    href="/keuangan"
+                    className="p-3 border border-gray-100 rounded-lg bg-gray-50 hover:bg-gray-100 transition text-xs font-bold text-slate-700"
+                  >
+                    📊 Catat Keuangan
+                  </Link>
+                  <Link
+                    href="/crowdfunding"
+                    className="p-3 border border-gray-100 rounded-lg bg-gray-50 hover:bg-gray-100 transition text-xs font-bold text-slate-700"
+                  >
+                    🤝 Modal Komunitas
+                  </Link>
+                  <Link
+                    href="/pinjaman"
+                    className="p-3 border border-gray-100 rounded-lg bg-gray-50 hover:bg-gray-100 transition text-xs font-bold text-slate-700"
+                  >
+                    💰 Pinjaman Mikro
+                  </Link>
+                  <Link
+                    href="/komunitas"
+                    className="p-3 border border-gray-100 rounded-lg bg-gray-50 hover:bg-gray-100 transition text-xs font-bold text-slate-700"
+                  >
+                    🎲 Arisan Digital
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+
           <div
             className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm"
             role="region"

@@ -8,6 +8,10 @@ export const NAV_LINKS = [
   { href: "/kalkulator-pajak", label: "Kalkulator Pajak" },
   { href: "/template-surat", label: "Template Surat" },
   { href: "/dashboard", label: "Dashboard" },
+  { href: "/crowdfunding", label: "Modal Komunitas", phase: 2 },
+  { href: "/keuangan", label: "Keuangan Usaha", phase: 2 },
+  { href: "/pinjaman", label: "Pinjaman Mikro", phase: 2 },
+  { href: "/komunitas", label: "Arisan Digital", phase: 2 },
 ];
 
 export const JENIS_USAHA_OPTIONS = [
